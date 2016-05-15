@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>	
+	<title>Day 5</title>
+	<style> 
+		body {
+			background:linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+			width:100%;
+			height:1000px;
+			height:1000px;
+			font-family: 'Lato', sans-serif;
+			font-weight: 300;
+		} 
+		#towrite{
+			width:80%;
+			margin:100px auto;
+			letter-spacing: .03em;
+			line-height: 30px;
+		}
+		#prompts{
+			width:80%;
+			margin:50px auto;
+		}
+		input{
+			margin-left: 10px;
+		}
+		button{
+			margin-top: 30px;
+			width:120px;
+			height:30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="towrite"></div>	
+
+	<div id="prompts">
+		<h2><em>Help me remember my dream...</em></h2>
+		<p>number: <input id="num" type="text"></p>
+		<p>name of friend: <input id="friend" type="text"></p>
+		<p>animal: <input id="animal" type="text"></p>
+		<p>location: <input id="loc" type="text"></p>
+		<p>adjective: <input id="adj1" type="text"></p>
+		<p>noun: <input id="noun1" type="text"></p>
+		<p>color: <input id="color1" type="text"></p>
+		<p>animal (plural): <input id="animals" type="text"></p>
+		<p>color: <input id="color2" type="text"></p>
+		<p>adjective: <input id="adj2" type="text"></p>
+		<p>noun: <input id="noun2" type="text"></p>
+		<p>name of celebrity: <input id="celeb1" type="text"></p>
+		<p>noun (plural): <input id="noun3" type="text"></p>
+		<p>adverb: <input id="adv" type="text"></p>
+		<p>adjective: <input id="adj3" type="text"></p>
+		<p>noun: <input id="noun4" type="text"></p>
+		<p>explanation: <input id="exp1" type="text"></p>
+		<p>verb (present ending in ing): <input id="verb" type="text"></p>
+		<p>a famous person: <input id="celeb2" type="text"></p>
+		<p>noun: <input id="noun5" type="text"></p>
+		<p>explanation: <input id="exp2" type="text"></p>
+	
+		<button class="btn" onclick="myFunction()">OK</button>
+		<!-- <a > -->
+	</div>
+
+	<script src="scripts.js"></script>
+	<script>
+	function myFunction() {
+		document.getElementById("prompts").style.display ="none";
+		// document.getElementById("body").style.height ="100%";
+	    var num = document.getElementById("num").value;
+	    var friend = document.getElementById("friend").value;
+	    var animal = document.getElementById("animal").value;
+	    var loc = document.getElementById("loc").value;
+	    var adj1 = document.getElementById("adj1").value;
+	    var noun1 = document.getElementById("noun1").value;
+	    var color1 = document.getElementById("color1").value;
+	    var animals = document.getElementById("animals").value;
+	    var color2 = document.getElementById("color2").value;
+	    var adj2 = document.getElementById("adj2").value;
+	    var noun2 = document.getElementById("noun2").value;
+	    var celeb1 = document.getElementById("celeb1").value;
+	    var noun3 = document.getElementById("noun3").value;
+	    var adv = document.getElementById("adv").value;
+	    var adj3 = document.getElementById("adj3").value;
+	    var noun4 = document.getElementById("noun4").value;
+	    var exp1 = document.getElementById("exp1").value;
+	    var verb = document.getElementById("verb").value;
+	    var celeb2 = document.getElementById("celeb2").value;
+	    var noun5 = document.getElementById("noun5").value;
+	    var exp2 = document.getElementById("exp2").value;
+
+	    if (num == null || friend == null || animal == null || loc == null || adj1 == null || noun1 == null || animals == null || color2 == null || adj2 == null || noun2 == null || celeb1 == null || noun3 == null || adv == null || adj3 == null || noun4 == null || exp1 == null || verb == null || celeb2 == null || noun5 == null || exp2 == null || animal == "") {
+	        alert("you skipped some fields, the dream might not make sense.");
+	        // return false;
+	    }
+
+	    console.log(num, friend, animal, loc, adj1, noun1, animals, color2, adj2, noun2, celeb1, noun3, adv, adj3, noun4, exp1, verb, celeb2, noun5, exp2);
+
+	    var div = document.getElementById('towrite');
+	    div.innerHTML = '<p>' + "In my dream I was with you and "  + friend +  ", and I had " + num + " mushrooms. Obviously we ate the shrooms. Then we each turned into a " + animal + " and we flew over " + loc + " on a " + adj1 + " " + noun1 + ". I was seeing " + color1 + " and turquoise " + animals + " everywhere. We decided to go snowboarding on a " + color2 + " mountain called the " + adj2 + " " + noun2 + " where we later joined a " + celeb1 + " fan club but everyone turned into " + noun3 + ". We were surrounded but escaped " + adv + " with the help of a " + adj3 + " " + noun4 + ". I know, crazy. " + exp1 + " I shouted. After hours of " + verb + " everything went back to normal but then I saw " + celeb2 + " yelling to a " + noun5 + " orchestra. " + exp2 + " I cried out. Then I woke up." + '<p>';
+
+	    scroll(0,0);
+	}
+	</script>
+
+</body>
+</html>
