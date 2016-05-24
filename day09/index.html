@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Day 9</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		body {
+			margin:0;
+			padding:0;
+		}
+	</style>
+
+</head>
+<body>
+	<script type="text/javascript" language="javascript">
+
+		var div = document.createElement('div');
+		div.style.height='100%';
+		div.style.lineHeight='0';
+		div.style.float='left';
+		div.style.overflow="hidden";
+		div.style.backgroundColor = 'white';
+
+		var sqPx = window.innerWidth / 30;
+
+		//get colorbase for all divs
+		var randColorBase = Math.random() * 16777215;
+		if (randColorBase < 2236962) randColorBase = 2236962;
+		else if (randColorBase > 14540253) randColorBase = 14540253;
+
+		//divide window into different divs
+		for (i = 0; i < window.innerWidth; i += sqPx ) {
+			for (j = 0; j < window.innerHeight; j += sqPx) {
+
+				var randColorStr = '#'+Math.floor(Math.random()*255+randColorBase).toString(16);
+
+				var block = document.createElement('div');
+				block.style.position='relative';
+				block.style.display='inline-block';
+				block.style.margin ='0px';
+				block.style.padding ='0px';
+				block.style.float= 'left';
+				block.style.width = sqPx + 'px';
+				block.style.height = sqPx + 'px';
+				block.style.zIndex = '1';
+				block.style.backgroundColor = randColorStr;
+
+
+				block.addEventListener('mouseover', function() {
+					this.style.background = 'white';
+					this.style.zIndex = 1;
+				});
+
+				div.appendChild(block);
+			}
+		}
+
+		document.body.appendChild(div);
+
+	</script>
+
+</body>
+</html>
